@@ -8,9 +8,7 @@ LOCAL_SRC_FILES := \
 	Exynos_OMX_ABaseport.c
 
 LOCAL_MODULE := libExynosOMX_ABasecomponent
-ifeq ($(BOARD_USES_VENDORIMAGE), true)
 LOCAL_PROPRIETARY_MODULE := true
-endif
 
 LOCAL_CFLAGS :=
 

@@ -24,9 +24,7 @@ LOCAL_HEADER_LIBRARIES := media_plugin_headers
 endif
 
 LOCAL_CFLAGS += -DUSE_ANDROID
-ifeq ($(BOARD_USES_VENDORIMAGE), true)
 LOCAL_PROPRIETARY_MODULE := true
-endif
 
 # only 3.4 kernel
 ifeq ($(filter-out 3.4, $(TARGET_LINUX_KERNEL_VERSION)),)

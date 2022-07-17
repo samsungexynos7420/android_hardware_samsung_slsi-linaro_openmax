@@ -8,9 +8,7 @@ LOCAL_SRC_FILES := \
 LOCAL_MODULE := libExynosOMX_Vdec
 LOCAL_ARM_MODE := arm
 LOCAL_MODULE_TAGS := optional
-ifeq ($(BOARD_USES_VENDORIMAGE), true)
 LOCAL_PROPRIETARY_MODULE := true
-endif
 
 LOCAL_C_INCLUDES := \
 	$(EXYNOS_OMX_INC)/exynos \

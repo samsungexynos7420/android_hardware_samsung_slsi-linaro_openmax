@@ -8,9 +8,7 @@ LOCAL_SRC_FILES := \
 	Exynos_OMX_Baseport.c
 
 LOCAL_MODULE := libExynosOMX_Basecomponent
-ifeq ($(BOARD_USES_VENDORIMAGE), true)
 LOCAL_PROPRIETARY_MODULE := true
-endif
 
 LOCAL_CFLAGS :=
 
@@ -53,9 +51,7 @@ LOCAL_SRC_FILES := \
 
 LOCAL_PRELINK_MODULE := false
 LOCAL_MODULE := libExynosOMX_Resourcemanager
-ifeq ($(BOARD_USES_VENDORIMAGE), true)
 LOCAL_PROPRIETARY_MODULE := true
-endif
 
 LOCAL_CFLAGS :=
 
