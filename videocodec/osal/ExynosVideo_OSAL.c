@@ -1580,6 +1580,7 @@ int Codec_OSAL_SetControls(
                 break;
             }
 
+#ifdef USE_MFC_HEADER
             /* extra common parameters */
             if (pCtx->videoCtx.instInfo.supportInfo.enc.bDropControlSupport == VIDEO_TRUE) {
                 i = ext_ctrls.count;
@@ -1588,7 +1589,7 @@ int Codec_OSAL_SetControls(
 
                 ext_ctrls.count += 1;
             }
-
+#endif
             ext_ctrls.ctrl_class = V4L2_CTRL_CLASS_MPEG;
             ext_ctrls.controls = ext_ctrl;
 
@@ -1878,9 +1879,11 @@ int Codec_OSAL_SetControls(
                 goto EXIT;
             }
 
+#ifdef USE_MFC_HEADER
             ext_ctrl[0].id    = V4L2_CID_MPEG_VIDEO_STATIC_INFO_ENABLE;
             ext_ctrl[0].value = 1;
-
+#endif
+            
             ext_ctrl[1].id    = V4L2_CID_MPEG_VIDEO_SEI_MAX_PIC_AVERAGE_LIGHT;
             ext_ctrl[1].value = pHDRStaticInfo->max_pic_average_light;
             ALOGE("%s: value = %u", __FUNCTION__, ext_ctrl[1].value);
@@ -2035,8 +2038,10 @@ int Codec_OSAL_SetFormat(
         fmt.fmt.pix_mp.height                       = pFmt->height;
         fmt.fmt.pix_mp.plane_fmt[0].bytesperline    = pFmt->stride;
         fmt.fmt.pix_mp.num_planes                   = pFmt->nPlane;
+#ifdef USE_MFC_HEADER        
         fmt.fmt.pix_mp.flags                        = pFmt->field;
-
+#endif
+        
         for (i = 0; i < pFmt->nPlane; i++)
             fmt.fmt.pix_mp.plane_fmt[i].sizeimage = pFmt->planeSize[i];
 
