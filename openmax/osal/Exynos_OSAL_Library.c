@@ -61,13 +61,8 @@ const char *Exynos_OSAL_dlerror(void)
 
 const char *Exynos_OSAL_GetLibPath(void)
 {
-#ifdef USE_VENDOR_IMAGE
     const char *ANDROID_LIB_INSTALL_PATH    = "/vendor/lib/omx/";
     const char *ANDROID_LIB64_INSTALL_PATH  = "/vendor/lib64/omx/";
-#else
-    const char *ANDROID_LIB_INSTALL_PATH    = "/system/lib/omx/";
-    const char *ANDROID_LIB64_INSTALL_PATH  = "/system/lib64/omx/";
-#endif
     const char *OTHERS_LIB_INSTALL_PATH     = "/usr/lib/";
     const char *OTHERS_LIB64_INSTALL_PATH   = "/usr/lib/";
 
