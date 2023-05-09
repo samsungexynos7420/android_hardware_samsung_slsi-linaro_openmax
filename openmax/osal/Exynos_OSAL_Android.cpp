@@ -318,7 +318,7 @@ static OMX_ERRORTYPE getColorAspectsFromDataSpace(OMX_PTR param)
         break;
     case HAL_PIXEL_FORMAT_EXYNOS_YCbCr_420_SP_M_S10B:
     case HAL_PIXEL_FORMAT_EXYNOS_YCbCr_420_SPN_S10B:
-    case HAL_PIXEL_FORMAT_EXYNOS_YCbCr_P010_M:      /* P010 */
+//     case HAL_PIXEL_FORMAT_EXYNOS_YCbCr_P010_M:      /* P010 */
         /* W/A for MCD : lower limitation of 10bit is HDR(BT.2020) */
         if ((dataspace & HAL_DATASPACE_STANDARD_BT2020) != HAL_DATASPACE_STANDARD_BT2020) {
             unsigned int mask = 0xFFFFFFFF ^ (0b111111 << HAL_DATASPACE_STANDARD_SHIFT);
