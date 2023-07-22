@@ -376,13 +376,12 @@ static void *MFC_Encoder_Init(ExynosVideoInstInfo *pVideoInfo)
 
         memset(pCtx->videoCtx.specificInfo.enc.pHDRInfoShareBufferAddr,
                 0, sizeof(ExynosVideoHdrDynamic) * VIDEO_BUFFER_MAX_NUM);
-#ifdef USE_MFC_HEADER
+
         if (Codec_OSAL_SetControl(pCtx, CODEC_OSAL_CID_VIDEO_SET_HDR_USER_SHARED_HANDLE,
                                     pCtx->videoCtx.specificInfo.enc.nHDRInfoShareBufferFD) != 0) {
             ALOGE("[%s] Failed to Codec_OSAL_SetControl(CODEC_OSAL_CID_VIDEO_SET_HDR_USER_SHARED_HANDLE)", __FUNCTION__);
             goto EXIT_QUERYCAP_FAIL;
         }
-#endif
     }
 
     return (void *)pCtx;
@@ -1405,12 +1404,12 @@ ExynosVideoErrorType MFC_Encoder_Set_DropControl(
         ret = VIDEO_ERROR_NOSUPPORT;
         goto EXIT;
     }
-#ifdef USE_MFC_HEADER
+
     if (Codec_OSAL_SetControl(pCtx, CODEC_OSAL_CID_ENC_ENABLE_DROP_CTRL, (bEnable == VIDEO_TRUE)? 1:0) != 0) {
         ret = VIDEO_ERROR_APIFAIL;
         goto EXIT;
     }
-#endif
+
 EXIT:
     return ret;
 }
