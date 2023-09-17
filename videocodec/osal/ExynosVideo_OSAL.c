@@ -2035,8 +2035,9 @@ int Codec_OSAL_SetFormat(
         fmt.fmt.pix_mp.height                       = pFmt->height;
         fmt.fmt.pix_mp.plane_fmt[0].bytesperline    = pFmt->stride;
         fmt.fmt.pix_mp.num_planes                   = pFmt->nPlane;
+#ifdef USE_ORIGINAL_HEADER
         fmt.fmt.pix_mp.flags                        = pFmt->field;
-
+#endif
         for (i = 0; i < pFmt->nPlane; i++)
             fmt.fmt.pix_mp.plane_fmt[i].sizeimage = pFmt->planeSize[i];
 
