@@ -983,6 +983,7 @@ int Codec_OSAL_SetControls(
                     ext_ctrls.count += 1;
                 }
 
+#if 0
                 if (pCtx->videoCtx.instInfo.supportInfo.enc.bChromaQpSupport == VIDEO_TRUE) {
                     i = ext_ctrls.count;
                     ext_ctrl[i].id          = V4L2_CID_MPEG_VIDEO_CHROMA_QP_OFFSET_CB;
@@ -992,6 +993,7 @@ int Codec_OSAL_SetControls(
 
                     ext_ctrls.count +=2;
                 }
+#endif
             }
                 break;
             case VIDEO_CODING_MPEG4:
@@ -1471,7 +1473,7 @@ int Codec_OSAL_SetControls(
 
                     ext_ctrls.count += 1;
                 }
-
+#if 0
                 if (pCtx->videoCtx.instInfo.supportInfo.enc.bChromaQpSupport == VIDEO_TRUE) {
                     i = ext_ctrls.count;
                     ext_ctrl[i].id          = V4L2_CID_MPEG_VIDEO_CHROMA_QP_OFFSET_CB;
@@ -1481,6 +1483,7 @@ int Codec_OSAL_SetControls(
 
                     ext_ctrls.count +=2;
                 }
+#endif
             }
                 break;
             case VIDEO_CODING_VP9:

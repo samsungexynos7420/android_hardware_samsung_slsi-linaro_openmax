@@ -1544,13 +1544,13 @@ static ExynosVideoErrorType MFC_Encoder_Set_Priority(
         ret = VIDEO_ERROR_NOSUPPORT;
         goto EXIT;
     }
-
+#if 0
     if (Codec_OSAL_SetControl(pCtx, CODEC_OSAL_CID_VIDEO_PRIOTIY, priority) != 0) {
         ALOGE("%s: Failed to set priority", __FUNCTION__);
         ret = VIDEO_ERROR_APIFAIL;
         goto EXIT;
     }
-
+#endif
 EXIT:
     return ret;
 }
