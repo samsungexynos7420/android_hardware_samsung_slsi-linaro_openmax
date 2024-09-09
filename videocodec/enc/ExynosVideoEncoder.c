@@ -1393,6 +1393,8 @@ ExynosVideoErrorType MFC_Encoder_Set_DropControl(
     CodecOSALVideoContext   *pCtx  = (CodecOSALVideoContext *)pHandle;
     ExynosVideoErrorType     ret   = VIDEO_ERROR_NONE;
 
+    (void)bEnable;  // Mark bEnable as unused to avoid the compiler warning
+
     if (pCtx == NULL) {
         ALOGE("%s: invalid parameter", __FUNCTION__);
         ret = VIDEO_ERROR_BADPARAM;
