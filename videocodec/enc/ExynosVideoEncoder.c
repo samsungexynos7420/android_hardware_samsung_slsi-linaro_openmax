@@ -1529,7 +1529,7 @@ EXIT:
  */
 static ExynosVideoErrorType MFC_Encoder_Set_Priority(
     void        *pHandle,
-    unsigned int priority)
+    __attribute__((unused)) unsigned int priority)
 {
     CodecOSALVideoContext *pCtx = (CodecOSALVideoContext *)pHandle;
     ExynosVideoErrorType   ret  = VIDEO_ERROR_NONE;
